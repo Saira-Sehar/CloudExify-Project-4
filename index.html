@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mizaara - Where Every Flavor Meets. Premium Pakistani & Italian dining experience. Order online now.">
+    <title>Mizaara | Where Every Flavor Meets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Loading Overlay -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <h1 class="loader-logo">Mizaara</h1>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">Mizaara</span>
+                <span class="brand-dot">.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">My Orders</a></li>
+                    <li class="nav-item">
+                        <button class="cart-btn favorite-nav-btn ms-2" data-bs-toggle="offcanvas" data-bs-target="#favoritesOffcanvas" title="My Favorites">
+                            <i class="bi bi-heart"></i>
+                            <span class="favorite-badge" id="favoriteBadge">0</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="cart-btn ms-2" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="bi bi-bag"></i>
+                            <span class="cart-badge" id="cartBadge">0</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="login.html" class="btn btn-auth" id="authBtn">
+                            <i class="bi bi-person"></i> Login
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn-logout d-none" id="logoutBtn">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tagline">Where Every Flavor Meets</span>
+            <h1 class="hero-title">Mizaara</h1>
+            <p class="hero-desc">Premium Pakistani & Italian dining — crafted with tradition, served with elegance.</p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn btn-primary-custom btn-lg">Explore Menu <i
+                        class="bi bi-arrow-down ms-2"></i></a>
+                <a href="tel:+923001234567" class="btn btn-outline-light btn-lg"><i class="bi bi-telephone me-2"></i>
+                    Reserve Table</a>
+            </div>
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <i class="bi bi-clock"></i>
+                    <span>Mon-Sun: 12 PM - 12 AM</span>
+                </div>
+                <div class="restaurant-status mt-3" id="restaurantStatus">
+                    <span class="status-dot"></span>
+                    <span id="statusText">Checking...</span>
+                </div>
+                <div class="hero-info-item">
+                    <i class="bi bi-star-fill"></i>
+                    <span>4.9 Rating (2000+ Reviews)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Highlights -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="highlight-card">
+                        <i class="bi bi-fire"></i>
+                        <h3>Authentic Recipes</h3>
+                        <p>Traditional Pakistani & Italian dishes prepared with original recipes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-card">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Sourced daily from trusted local suppliers for maximum flavor.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-card">
+                        <i class="bi bi-truck"></i>
+                        <h3>Quick Delivery</h3>
+                        <p>Hot and fresh at your doorstep within 30-45 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Special Section -->
+    <section class="daily-special-section py-4">
+        <div class="container">
+            <div class="daily-special-card">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <span class="daily-badge">🌟 Today's Special</span>
+                        <h2 class="daily-title">Chicken Karahi</h2>
+                        <p class="daily-desc">Fresh from our kitchen — today only 20% OFF!</p>
+                        <div class="daily-price mb-3">
+                            <span class="original-price">₨1,200</span>
+                            <span class="discounted-price">₨960</span>
+                        </div>
+                        <button class="btn btn-primary-custom" onclick="addToCart(5)">Order Now</button>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="assets/images/food/pakistani/chicken-karahi.jpg" alt="Daily Special"
+                            style="max-width:300px;border-radius:12px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Our Menu</span>
+                <h2 class="section-title">Explore <span class="accent">Flavors</span></h2>
+                <p class="section-desc">Discover the perfect blend of Pakistani tradition and Italian sophistication.</p>
+            </div>
+
+            <!-- Search & Filter -->
+            <div class="menu-controls">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search dishes..." class="search-input">
+                </div>
+                <div class="category-filters" id="categoryFilters">
+                    <button class="cat-btn active" data-category="all">All</button>
+                    <button class="cat-btn" data-category="Starters">Starters</button>
+                    <button class="cat-btn" data-category="Pakistani Classics">Pakistani</button>
+                    <button class="cat-btn" data-category="Tandoor & Grill">Tandoor & Grill</button>
+                    <button class="cat-btn" data-category="Salads & Yogurt">Salads</button>
+                    <button class="cat-btn" data-category="Italian Kitchen">Italian</button>
+                    <button class="cat-btn" data-category="Pasta">Pasta</button>
+                    <button class="cat-btn" data-category="Desserts">Desserts</button>
+                    <button class="cat-btn" data-category="Beverages">Beverages</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="row g-4" id="menuGrid">
+                <div class="col-12 text-center py-5" id="menuLoading">
+                    <div class="spinner-border text-accent" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state d-none" id="emptyState">
+                <i class="bi bi-search"></i>
+                <h3>No dishes found</h3>
+                <p>Try a different search term or category.</p>
+                <button class="btn btn-outline-custom" id="clearFilters">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="promo-image-wrapper">
+                        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?w=600&h=500&fit=crop"
+                            alt="Restaurant Interior">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="section-subtitle">Why Mizaara?</span>
+                    <h2 class="section-title">A Dining Experience Like No Other</h2>
+                    <p class="promo-desc">From our tandoor to your table — every dish tells a story of heritage and
+                        passion. Our chefs blend Pakistani spices with Italian techniques to create something truly
+                        unique.</p>
+                    <div class="promo-points">
+                        <div class="promo-point"><i class="bi bi-check-circle-fill"></i> Family-friendly dining</div>
+                        <div class="promo-point"><i class="bi bi-check-circle-fill"></i> Private dining rooms</div>
+                        <div class="promo-point"><i class="bi bi-check-circle-fill"></i> Catering services</div>
+                        <div class="promo-point"><i class="bi bi-check-circle-fill"></i> Outdoor seating</div>
+                    </div>
+                    <a href="#menu" class="btn btn-primary-custom btn-lg mt-3">Order Now <i
+                            class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="footer-logo">Mizaara<span class="accent">.</span></h3>
+                    <p class="footer-desc">Where Every Flavor Meets. Premium Pakistani & Italian dining in the heart of
+                        the city.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="orders.html">My Orders</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="bi bi-geo-alt"></i> 123 Food Street, Gulberg, Lahore</li>
+                        <li><i class="bi bi-telephone"></i> +92 300 1234567</li>
+                        <li><i class="bi bi-envelope"></i> info@mizaara.pk</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4>Hours</h4>
+                    <ul class="footer-hours">
+                        <li>Mon - Fri: 12 PM - 12 AM</li>
+                        <li>Sat - Sun: 1 PM - 1 AM</li>
+                    </ul>
+                    <a href="admin.html" class="admin-link-footer">Admin Login</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mizaara. All rights reserved. | Designed by Saira Sehar</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Your Cart</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body" id="cartItems">
+            <!-- Cart items rendered dynamically -->
+        </div>
+        <div class="offcanvas-footer" id="cartFooter">
+            <div class="cart-total-row">
+                <span>Total</span>
+                <span id="cartTotal">₨0</span>
+            </div>
+            <button class="btn btn-primary-custom w-100" onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Favorites Offcanvas -->
+    <div class="offcanvas offcanvas-end favorites-offcanvas" tabindex="-1" id="favoritesOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">❤️ My Favorites</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body" id="favoritesItems">
+            <!-- Favorites rendered dynamically -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

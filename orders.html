@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Mizaara | My Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">Mizaara</span>
+                <span class="brand-dot">.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="orders.html">My Orders</a></li>
+                    <li class="nav-item">
+                        <button class="btn-logout ms-2" id="logoutBtn">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Orders Section -->
+    <section class="orders-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Order History</span>
+                <h2 class="section-title">My <span class="accent">Orders</span></h2>
+                <p class="section-desc">Track your orders in real-time</p>
+            </div>
+            <div class="order-filters mb-4 text-center">
+                <button class="btn order-filter-btn active" data-filter="all" onclick="filterOrders('all')">All
+                    Orders</button>
+                <button class="btn order-filter-btn" data-filter="Pending"
+                    onclick="filterOrders('Pending')">Pending</button>
+                <button class="btn order-filter-btn" data-filter="Preparing"
+                    onclick="filterOrders('Preparing')">Preparing</button>
+                <button class="btn order-filter-btn" data-filter="Ready" onclick="filterOrders('Ready')">Ready</button>
+            </div>
+            <div class="orders-list" id="ordersList">
+                <div class="text-center py-5" id="ordersLoading">
+                    <div class="spinner-border text-accent" role="status"></div>
+                </div>
+            </div>
+
+            <div class="empty-state d-none" id="ordersEmpty">
+                <i class="bi bi-receipt"></i>
+                <h3>No orders yet</h3>
+                <p>Place your first order and it will appear here.</p>
+                <a href="index.html" class="btn btn-primary-custom">Browse Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+
+</html>
