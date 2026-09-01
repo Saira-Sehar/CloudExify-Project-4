@@ -34,8 +34,7 @@ Theme: Dark Elegant + Gold Accents
 LIVE DEMO
 ────────────────────────────────────────────────────────────
 
-Customer Panel: https://mizaara.vercel.app
-Admin Panel: https://mizaara.vercel.app/admin.html
+https://cloud-exify-project-4-seven.vercel.app/
 
 Admin Credentials:
   Email: admin@mizaara.pk
