@@ -1,0 +1,377 @@
+/* MIZAARA - Admin Pages CSS */
+
+body.admin-page {
+    background: #1a1310 !important;
+    color: #ffffff !important;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.admin-navbar {
+    background: #241A17 !important;
+    border-bottom: 2px solid #C49A5A !important;
+    padding: 14px 0 !important;
+}
+
+.admin-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+}
+
+.admin-badge {
+    background: #C49A5A !important;
+    color: #000000 !important;
+    font-weight: 800 !important;
+    padding: 4px 10px !important;
+    border-radius: 4px !important;
+    font-size: 0.7rem !important;
+    margin-left: 8px !important;
+}
+
+/* Admin Section */
+.admin-section {
+    padding: 120px 0 80px !important;
+    min-height: 100vh !important;
+}
+
+/* Section Titles */
+.admin-section .section-title {
+    color: #ffffff !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+}
+
+.admin-section .section-subtitle {
+    color: #C49A5A !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+.admin-section h2 {
+    color: #ffffff !important;
+}
+
+/* Stat Cards - Icon + Label side by side, Number below */
+.admin-stat-card {
+    background: #241A17 !important;
+    border: 1px solid #3a2d26 !important;
+    border-radius: 16px !important;
+    padding: 24px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.admin-stat-card:hover {
+    border-color: #C49A5A !important;
+    transform: translateY(-2px) !important;
+}
+
+.stat-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+}
+
+.stat-header .stat-icon {
+    font-size: 1.5rem !important;
+    color: #C49A5A !important;
+    display: inline-block !important;
+}
+
+.stat-header .stat-label {
+    font-size: 0.85rem !important;
+    color: #C49A5A !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+}
+
+.admin-stat-card .stat-number {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    display: block !important;
+    line-height: 1 !important;
+    text-align: center !important;
+}
+
+/* Chart Card */
+.admin-chart-card {
+    background: #241A17 !important;
+    border: 1px solid #3a2d26 !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    margin-bottom: 30px !important;
+}
+
+.chart-title {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.chart-title i {
+    color: #C49A5A !important;
+}
+
+.chart-container {
+    display: flex !important;
+    align-items: flex-end !important;
+    gap: 12px !important;
+    height: 200px !important;
+    padding-top: 20px !important;
+}
+
+.chart-bar-wrapper {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.chart-bar {
+    width: 100% !important;
+    background: #C49A5A !important;
+    border-radius: 4px 4px 0 0 !important;
+    min-height: 4px !important;
+    transition: height 0.5s ease !important;
+}
+
+.chart-label {
+    font-size: 0.75rem !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Table Card */
+.admin-table-card {
+    background: #241A17 !important;
+    border: 1px solid #3a2d26 !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+}
+
+.table-title {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.table-title i {
+    color: #C49A5A !important;
+}
+
+/* Tables */
+.table-responsive {
+    background: #1a1310 !important;
+    border-radius: 12px !important;
+}
+
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background: #1a1310 !important;
+}
+
+thead {
+    background: #1a1310 !important;
+}
+
+thead th {
+    background: #1a1310 !important;
+    color: #C49A5A !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    padding: 16px !important;
+    border-bottom: 2px solid #C49A5A !important;
+    text-align: left !important;
+}
+
+tbody {
+    background: #1a1310 !important;
+}
+
+tbody tr {
+    background: #241A17 !important;
+}
+
+tbody tr:nth-child(even) {
+    background: #2a1f1a !important;
+}
+
+tbody td {
+    background: transparent !important;
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    padding: 16px !important;
+    border-bottom: 1px solid #3a2d26 !important;
+    vertical-align: middle !important;
+}
+
+tbody tr:hover td {
+    background: #3a2d26 !important;
+}
+
+/* Table buttons */
+.btn-sm {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid #C49A5A !important;
+    padding: 6px 12px !important;
+}
+
+.btn-sm:hover {
+    background: #C49A5A !important;
+    color: #000000 !important;
+}
+
+.btn-outline-danger {
+    color: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+/* Status badges */
+.status-badge {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    font-size: 0.8rem !important;
+}
+
+/* Status dropdown */
+.status-select {
+    background: #1a1310 !important;
+    border: 1px solid #C49A5A !important;
+    color: #ffffff !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    cursor: pointer !important;
+}
+
+.status-select option {
+    background: #1a1310 !important;
+    color: #ffffff !important;
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: #7A2E2E !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 12px 28px !important;
+    border-radius: 6px !important;
+}
+
+.btn-primary-custom:hover {
+    background: #8e3838 !important;
+}
+
+.btn-outline-light {
+    color: #ffffff !important;
+    border: 1px solid #C49A5A !important;
+    font-weight: 600 !important;
+}
+
+.btn-outline-light:hover {
+    background: #C49A5A !important;
+    color: #000000 !important;
+}
+
+.btn-logout {
+    background: transparent !important;
+    border: 1px solid #C49A5A !important;
+    color: #C49A5A !important;
+    padding: 10px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-size: 0.85rem !important;
+}
+
+.btn-logout:hover {
+    background: #7A2E2E !important;
+    color: #ffffff !important;
+    border-color: #7A2E2E !important;
+}
+
+/* Modal */
+.modal-content {
+    background: #241A17 !important;
+    color: #ffffff !important;
+    border: 1px solid #C49A5A !important;
+    border-radius: 16px !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #3a2d26 !important;
+}
+
+.modal-title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #3a2d26 !important;
+}
+
+.modal-content .form-label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.modal-content .form-control,
+.modal-content .form-select,
+.modal-content textarea {
+    background: #1a1310 !important;
+    border: 1px solid #C49A5A !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+}
+
+.modal-content .form-control::placeholder {
+    color: #8a7a6e !important;
+}
+
+.modal-content .form-check-label {
+    color: #ffffff !important;
+}
+
+.modal-content .btn-close {
+    filter: invert(1) !important;
+}
+
+.modal-content .btn-secondary {
+    background: #3a2d26 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+/* Chart bar hover effect */
+.chart-bar-wrapper {
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+.chart-bar-wrapper .chart-bar:hover {
+    background: #d4b872 !important;
+    transition: background 0.3s ease !important;
+}
