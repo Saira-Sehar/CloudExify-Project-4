@@ -58,9 +58,14 @@ function renderMenu() {
                     <i class="bi ${isFav ? 'bi-heart-fill' : 'bi-heart'}" style="color:${isFav ? '#ef4444' : '#6b5a4e'};"></i>
                 </button>
                 <div class="menu-card-image">
+                    <div class="img-loading-skeleton" id="skeleton-${item.id}"></div>
                     <img src="${item.image_url || 'assets/images/food/placeholder.jpg'}" 
                          alt="${item.name}" 
-                         onerror="this.src='assets/images/food/placeholder.jpg'">
+                         loading="lazy"
+                         decoding="async"
+                         onerror="this.onerror=null; this.src='assets/images/food/placeholder.jpg'; hideSkeleton(${item.id});"
+                         onload="hideSkeleton(${item.id});"
+                         style="display:none;">
                 </div>
                 <div class="menu-card-body">
                     <span class="menu-card-category">${item.category}</span>
@@ -78,6 +83,15 @@ function renderMenu() {
     `;
     }).join('');
 }
+
+// Hide skeleton and show image
+window.hideSkeleton = function(itemId) {
+    const skeleton = document.getElementById('skeleton-' + itemId);
+    if (skeleton) skeleton.style.display = 'none';
+    
+    const img = document.querySelector(`#skeleton-${itemId} + img`);
+    if (img) img.style.display = 'block';
+};
 
 // Filter menu by category
 function filterByCategory(category) {
@@ -195,6 +209,7 @@ function updateFavoritesUI() {
                         <img src="${item.image_url || 'assets/images/food/placeholder.jpg'}" 
                              alt="${item.name}" 
                              class="favorite-item-image"
+                             loading="lazy"
                              onerror="this.src='assets/images/food/placeholder.jpg'">
                         <div class="favorite-item-info">
                             <p class="favorite-item-name">${item.name}</p>
@@ -245,19 +260,18 @@ window.selectSuggestion = function(name) {
 function updateRestaurantStatus() {
     const now = new Date();
     const hours = now.getHours();
-    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+    const day = now.getDay();
     
-    let openHour = 12; // Mon-Fri
-    let closeHour = 24; // 12 AM
+    let openHour = 12;
+    let closeHour = 24;
     
-    if (day === 6 || day === 0) { // Saturday or Sunday
-        openHour = 13; // 1 PM
-        closeHour = 25; // 1 AM next day
+    if (day === 6 || day === 0) {
+        openHour = 13;
+        closeHour = 25;
     }
     
     const isOpen = hours >= openHour && hours < closeHour;
     
-    // Save for cart.js to check
     window.isRestaurantOpen = isOpen;
     
     const statusDot = document.querySelector('.status-dot');
